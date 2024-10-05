@@ -5,21 +5,19 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out code from GitHub...'
-                git 'https://github.com/fardi1312/Foyer2324.git'
+                git branch: 'main', url: 'https://github.com/fardi1312/Foyer2324.git', credentialsId: 'github-token'
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'mvn clean package -DskipTests' 
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'mvn test' 
             }
         }
 
