@@ -14,3 +14,4 @@ COPY Foyer/target/Foyer-0.0.1-SNAPSHOT.jar /app/Foyer.jar
 ENTRYPOINT ["java", "-jar", "/app/Foyer.jar"]
 
 
+
