@@ -5,7 +5,3 @@ README projrct foyer
 
 
 
-
-
-
-
