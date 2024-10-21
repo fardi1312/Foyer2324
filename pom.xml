@@ -81,23 +81,15 @@
 
     <distributionManagement>
         <repository>
-            <id>nexus-releases</id>
+            <id>Maven-Massoud</id>
             <url>http://13.126.124.159:8081/repository/Maven-Massoud/</url>
         </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <url>http://13.126.124.159:8081/repository/maven-snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 
     <repositories>
         <repository>
-            <id>nexus-releases</id>
-            <url>http://13.126.124.159:8081/repository/Maven-Massoud/</url>
-        </repository>
-        <repository>
-            <id>nexus-snapshots</id>
-            <url>http://13.126.124.159:8081/repository/Maven-Massoud/</url>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
         </repository>
     </repositories>
 
