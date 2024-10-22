@@ -79,18 +79,9 @@
         </plugins>
     </build>
 
-    <distributionManagement>
-        <repository>
-            <id>Maven-Massoud</id>
-            <url>http://13.126.124.159:8081/repository/Maven-Massoud/</url>
-        </repository>
-    </distributionManagement>
 
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>https://repo.maven.apache.org/maven2</url>
-        </repository>
-    </repositories>
-
+ <distributionManagement>
+          <id>deploymentRepo</id>
+         <url>http://13.126.124.159:8081/repository/maven-releases/</url>
+ </distributionManagement>
 </project>
