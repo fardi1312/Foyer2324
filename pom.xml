@@ -79,9 +79,10 @@
         </plugins>
     </build>
 
-
- <distributionManagement>
-          <id>deploymentRepo</id>
-         <url>http://13.126.124.159:8081/repository/maven-releases/</url>
- </distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>deploymentRepo</id>
+            <url>http://13.126.124.159:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 </project>
