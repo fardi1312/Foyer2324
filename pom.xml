@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>tn.esprit.spring</groupId>
-    <artifactId>Foyer</artifactId>
+    <artifactId>FoyerSE</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Foyer</name>
-    <description>Foyer</description>
+    <name>FoyerSE</name>
+    <description>FoyerSE</description>
     <properties>
         <java.version>17</java.version>
     </properties>
