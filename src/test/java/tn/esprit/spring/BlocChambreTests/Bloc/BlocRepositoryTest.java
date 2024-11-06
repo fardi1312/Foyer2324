@@ -49,7 +49,6 @@ class BlocRepositoryTest {
         Bloc bloc = new Bloc(0, "Bloc A", 100, foyer, null);
         blocRepository.save(bloc);
 
-        // البحث عن Bloc باستخدام اسمه
         Bloc foundBloc = blocRepository.findByNomBloc("Bloc A");
 
         assertNotNull(foundBloc);
