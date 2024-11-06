@@ -1,4 +1,4 @@
-package tn.esprit.spring.RepositoryTests.Chambre;
+package tn.esprit.spring.BlocChambreTests.Chambre;
 
 import tn.esprit.spring.DAO.Entities.Bloc;
 import tn.esprit.spring.DAO.Entities.Chambre;

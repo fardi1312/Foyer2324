@@ -1,4 +1,4 @@
-package tn.esprit.spring.RepositoryTests.Bloc;
+package tn.esprit.spring.BlocChambreTests.Bloc;
 
 import tn.esprit.spring.DAO.Entities.Bloc;
 import tn.esprit.spring.DAO.Entities.Foyer;
@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ActiveProfiles;
 import tn.esprit.spring.DAO.Repositories.BlocRepository;
-import tn.esprit.spring.DAO.Repositories.ChambreRepository;
 import tn.esprit.spring.DAO.Repositories.FoyerRepository;
 
 import java.util.List;
@@ -25,8 +24,6 @@ class BlocRepositoryTest {
     @Autowired
     private FoyerRepository foyerRepository;
 
-    @Autowired
-    private ChambreRepository chambreRepository;
 
     @Test
     void testSaveBloc() {
