@@ -77,16 +77,41 @@
             <version>1.14.9</version>
         </dependency>
 
-        <!-- H2 Database for in-memory database during tests -->
+
+
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.9.2</version>
+        </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <scope>test</scope>
+            <version>2.3.232</version>
         </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
+
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>4.0.0.4121</version>
+            </plugin>
             <!-- Spring Boot Maven Plugin for packaging the Spring Boot application -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -122,6 +147,8 @@
                 </executions>
             </plugin>
         </plugins>
+
+
     </build>
 
     <distributionManagement>
