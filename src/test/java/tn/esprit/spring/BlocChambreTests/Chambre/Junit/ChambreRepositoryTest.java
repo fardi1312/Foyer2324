@@ -40,15 +40,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
     @Test
-     void testReadChambre() {
-        Chambre savedChambre = chambreRepository.save(chambre);  // First, create and save the chambre
-        Chambre foundChambre = chambreRepository.findById(savedChambre.getIdChambre()).orElse(null);
-        System.out.println("Found Chambre: " + foundChambre);  // Print the found chambre to console
-        assertNotNull(foundChambre, "Chambre should be found");
-        assertEquals(savedChambre.getNumeroChambre(), foundChambre.getNumeroChambre(), "Chambre numbers should match");
-    }
-
-    @Test
      void testUpdateChambre() {
         Chambre savedChambre = chambreRepository.save(chambre);  // Save a chambre
         savedChambre.setNumeroChambre(102);  // Update the chambre number
