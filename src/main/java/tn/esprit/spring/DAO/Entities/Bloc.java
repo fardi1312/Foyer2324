@@ -25,22 +25,12 @@ public class Bloc implements Serializable {
     private String nomBloc;
 
     private long capaciteBloc;
-    public Bloc(String nomBloc) {
-        this.nomBloc = nomBloc;
-    }
+
+
     @ManyToOne
     private Foyer foyer;
 
     @OneToMany(mappedBy = "bloc", fetch = FetchType.EAGER)
     private List<Chambre> chambres = new ArrayList<>(); // No 'transient' here, initialized to avoid nulls
 
-    @Override
-    public String toString() {
-        return "Bloc{" +
-                "idBloc=" + idBloc +
-                ", nomBloc='" + nomBloc + '\'' +
-                ", capaciteBloc=" + capaciteBloc +
-                ", foyer=" + (foyer != null ? foyer.getNomFoyer() : "No Foyer") +
-                '}';
-    }
 }

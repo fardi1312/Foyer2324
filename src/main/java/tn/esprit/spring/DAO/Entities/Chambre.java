@@ -31,13 +31,5 @@ public class Chambre implements Serializable {
     @OneToMany
     @JsonIgnore
     List<Reservation> reservations= new ArrayList<>();
-    @Override
-    public String toString() {
-        return "Chambre{" +
-                "idChambre=" + idChambre +
-                ", numeroChambre=" + numeroChambre +
-                ", typeC=" + typeC +
-                ", bloc=" + (bloc != null ? bloc.getNomBloc() : "No Bloc") +
-                '}';
-    }
+
 }
