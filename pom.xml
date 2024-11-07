@@ -77,9 +77,7 @@
             <version>1.14.9</version>
         </dependency>
 
-
-
-
+        <!-- JUnit dependencies -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -96,6 +94,8 @@
             <artifactId>junit-jupiter-params</artifactId>
             <version>5.9.2</version>
         </dependency>
+
+        <!-- H2 database for testing -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -107,12 +107,21 @@
     <build>
         <plugins>
 
+            <!-- SonarQube Maven Plugin -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>4.0.0.4121</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>sonar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
-            <!-- Spring Boot Maven Plugin for packaging the Spring Boot application -->
+
+            <!-- Spring Boot Maven Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -126,7 +135,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Jacoco Plugin for test coverage reporting -->
+            <!-- Jacoco Plugin for test coverage -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -146,9 +155,8 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
-
-
     </build>
 
     <distributionManagement>
@@ -159,7 +167,7 @@
         </repository>
         <snapshotRepository>
             <id>snapshotRepo</id>
-            <url>http://192.168.33.10:8081/repository/maven-snapshots/</url> <!-- Add this if you want to deploy snapshots -->
+            <url>http://192.168.33.10:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
