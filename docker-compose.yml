@@ -40,7 +40,27 @@ services:
       PMA_PASSWORD: motdepasse
     networks:
       - app-network
+  # Prometheus
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml  # Link the Prometheus config file
+    networks:
+      - app-network
 
+  # Grafana
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    networks:
+      - app-network
 networks:
   app-network:
     driver: bridge
