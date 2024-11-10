@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mysql:
     image: mysql:8.0
@@ -9,18 +7,18 @@ services:
       MYSQL_USER: utilisateur
       MYSQL_PASSWORD: motdepasse
     ports:
-      - "3310:3306"  # Host port mapped to container port
+      - "3310:3306"
     networks:
       - app-network
     volumes:
-      - mysql-data:/var/lib/mysql # Persist MySQL data
+      - mysql-data:/var/lib/mysql
 
   spring-app:
-    image: fardi1312/foyerdokerhub:latest # Use 'latest' or set a specific tag
+    image: fardi1312/foyerdokerhub:latest
     build:
-      context: . # This will look for a Dockerfile in the current directory
+      context: .
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/foyerMassoudFardi  # Use 3306 for MySQL inside the container
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/foyerMassoudFardi
       SPRING_DATASOURCE_USERNAME: utilisateur
       SPRING_DATASOURCE_PASSWORD: motdepasse
     ports:
@@ -33,7 +31,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
-      - "8888:80"  # Change this to your desired port
+      - "8888:80"
     environment:
       PMA_HOST: mysql
       PMA_USER: utilisateur
@@ -41,15 +39,10 @@ services:
     networks:
       - app-network
 
-  prometheus:
-    image: prom/prometheus:latest
-    container_name: prometheus
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    networks:
-      - app-network
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   mysql-data:
+    driver: local
