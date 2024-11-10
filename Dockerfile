@@ -1,14 +1,14 @@
-# Use an official Java runtime as a parent image
+# Utiliser une image Java officielle comme base
 FROM openjdk:17-jdk-slim
 
-# Set the working directory in the container
+# Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# Copy the Maven build output (jar file) to the container
-COPY target/foyer-0.0.1-SNAPSHOT.jar foyer-app.jar
+# Copier le fichier .jar généré par Maven depuis le répertoire target vers le conteneur
+COPY target/-0.0.1-SNAPSHOT.jar foyer-app.jar
 
-# Make port 8412 available to the world outside this container
-EXPOSE 8412
+# Exposer le port sur lequel votre application Spring Boot écoute
+EXPOSE 8110
 
-# Run the jar file
+# Démarrer l'application
 ENTRYPOINT ["java", "-jar", "foyer-app.jar"]
