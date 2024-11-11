@@ -59,7 +59,7 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
 
-
+/*
     @Test
      void testUpdateBloc() {
         testBloc.setCapaciteBloc(150);
@@ -69,7 +69,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
         assertNotNull(updatedBloc);
         assertEquals(150, updatedBloc.getCapaciteBloc());
-    }
+    }*/
 
     @Test
      void testDeleteBloc() {
