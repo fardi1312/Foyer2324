@@ -1,14 +1,14 @@
-# Utiliser une image Java officielle comme base
+# Start with a base image containing Java runtime
 FROM openjdk:17-jdk-slim
 
-# Définir le répertoire de travail dans le conteneur
+# Set the working directory
 WORKDIR /app
 
-# Copier le fichier .jar généré par Maven depuis le répertoire target vers le conteneur
-COPY target/Foyer-0.0.1-SNAPSHOT.jar foyer-app.jar
+# Copy the jar file from the Maven target directory to the container
+COPY target/Foyer-2.0.3-SNAPSHOT.jar /app/foyer.jar
 
-# Exposer le port sur lequel votre application Spring Boot écoute
-EXPOSE 8110
+# Expose the port your app runs on (adjust if necessary)
+EXPOSE 8111
 
-# Démarrer l'application
-ENTRYPOINT ["java", "-jar", "foyer-app.jar"]
+# Define the command to run your Spring Boot application
+ENTRYPOINT ["java", "-jar", "foyer.jar"]
