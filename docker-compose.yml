@@ -16,7 +16,7 @@ services:
       - mysql-data:/var/lib/mysql  # Persist MySQL data
 
   spring-app:
-    image: fardi1312/foyerdevops:10
+    image: fardi1312/foyerdevops:latest
     build:
       context: .  # Looks for Dockerfile in the current directory
     environment:
