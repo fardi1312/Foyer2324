@@ -23,17 +23,6 @@ services:
       - "8111:8111"
     depends_on:
       - mysqldb
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
-    container_name: phpmyadmin
-    restart: unless-stopped
-    ports:
-      - "8888:80"
-    environment:
-      - PMA_HOST=mysqldb
-      - PMA_USER=root
-      - PMA_PASSWORD=root
-    depends_on:
-      - mysqldb
+
 volumes:
   db_vol:
